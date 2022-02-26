@@ -46,34 +46,5 @@ class NetworkService{
             }
         }.resume()
     }
-    
-    
-    func downloadImage(from urlString: String, completed: @escaping (UIImage?) -> Void) { // downloads image
-        let cacheKey = NSString(string: urlString) // creates cacheKey to store in image variable
-        guard let url = URL(string: urlString) else {
-            completed(nil)
-            return
-        }
-        
-        if let image = cache.object(forKey: cacheKey) { // check if image is there
-            completed(image)
-            return
-        }
-        let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-            guard let self = self,
-                  error == nil,
-                  let response = response as? HTTPURLResponse, response.statusCode == 200,
-                  let data = data,
-                  let image = UIImage(data: data) else {
-                completed(nil)
-                return
-            }
-            DispatchQueue.main.async { [weak self] in
-                self?.cache.setObject(image, forKey: cacheKey)
-                completed(image)
-            }
-        }
-        task.resume()
-    }
 
 }

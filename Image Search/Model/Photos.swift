@@ -28,7 +28,6 @@ struct PhotoModel:Codable {
     }
 }
 
-
 struct Image: Codable {
     let id: String
     let link: String?
