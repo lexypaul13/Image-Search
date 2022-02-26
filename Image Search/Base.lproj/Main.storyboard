@@ -64,19 +64,16 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ZXt-Cx-WX8"/>
                                 </connections>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="E2N-mf-VBB">
-                                <rect key="frame" x="10" y="44" width="388" height="34"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="-28" translatesAutoresizingMaskIntoConstraints="NO" id="E2N-mf-VBB">
+                                <rect key="frame" x="10" y="44" width="394" height="34"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OQt-MQ-oRA">
-                                        <rect key="frame" x="0.0" y="0.0" width="313" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="313" id="PMq-fQ-4Ba"/>
-                                        </constraints>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Image" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OQt-MQ-oRA">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDV-k7-9ME">
-                                        <rect key="frame" x="319" y="0.0" width="69" height="34"/>
+                                        <rect key="frame" x="325" y="0.0" width="69" height="34"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Search"/>
                                         <connections>
@@ -92,6 +89,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qjn-Mq-a2J" secondAttribute="trailing" id="IFZ-o6-7tA"/>
                             <constraint firstItem="E2N-mf-VBB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ow1-n1-Kdu"/>
                             <constraint firstItem="Qjn-Mq-a2J" firstAttribute="top" secondItem="E2N-mf-VBB" secondAttribute="bottom" constant="13" id="PQa-u7-CwZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="E2N-mf-VBB" secondAttribute="trailing" constant="10" id="ZHL-Y6-4rc"/>
                             <constraint firstItem="Qjn-Mq-a2J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b1M-O5-lS7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qjn-Mq-a2J" secondAttribute="bottom" id="o48-n6-bnG"/>
                             <constraint firstItem="E2N-mf-VBB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="x0p-Qo-eON"/>

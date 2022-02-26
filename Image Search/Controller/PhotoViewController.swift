@@ -29,6 +29,7 @@ class PhotoViewController: UIViewController {
 
     func addButton(){
         guard let textfield =  textField.text else {return}
+       
         NetworkService.shared.getJSON(searchName: textfield) {  [weak self]  (photos) in
             guard let self = self else { return}
             guard let photos = photos else{ return }
