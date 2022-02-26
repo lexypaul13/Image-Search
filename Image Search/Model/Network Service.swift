@@ -11,17 +11,15 @@ class NetworkService{
     static let shared = NetworkService()
     private let baseURL = "https://api.imgur.com/3/gallery"
     private init() {}
+    
     let cache   = NSCache<NSString, UIImage>()
 
     
     func getJSON( searchName: String, completion: @escaping([PhotoModel]?) -> Void){
         let endPoints = baseURL + "/search/time/week/?q=\(searchName)"
-        guard let url = URL(string: endPoints ) else{
-            return
-        }
+        guard let url = URL(string: endPoints ) else{return}
         var request =  URLRequest(url: url)
-        let headers = ["Authorization": "Client-ID b067d5cb828ec5a"]
-        
+        let headers = ["Authorization": "Client-ID 82883e01a127f3c"]
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -49,11 +47,10 @@ class NetworkService{
         }.resume()
     }
     
-
     
-    func downloadImage(from imageUrl: Image, completed: @escaping (UIImage?) -> Void) { // downloads image
-        let cacheKey = NSString(string: imageUrl.link ?? "") // creates cacheKey to store in image variable
-        guard let url = URL(string: imageUrl.link ?? "") else {
+    func downloadImage(from urlString: String, completed: @escaping (UIImage?) -> Void) { // downloads image
+        let cacheKey = NSString(string: urlString) // creates cacheKey to store in image variable
+        guard let url = URL(string: urlString) else {
             completed(nil)
             return
         }
@@ -62,27 +59,21 @@ class NetworkService{
             completed(image)
             return
         }
-        var request =  URLRequest(url: url)
-        let headers = ["Authorization": "Client-ID b067d5cb828ec5a"]
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
-       URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+        let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             guard let self = self,
                   error == nil,
                   let response = response as? HTTPURLResponse, response.statusCode == 200,
                   let data = data,
                   let image = UIImage(data: data) else {
-                 completed(nil)
+                completed(nil)
                 return
             }
             DispatchQueue.main.async { [weak self] in
                 self?.cache.setObject(image, forKey: cacheKey)
                 completed(image)
             }
-        }.resume()
+        }
+        task.resume()
     }
-    
+
 }

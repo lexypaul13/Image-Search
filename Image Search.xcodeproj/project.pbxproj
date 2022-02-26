@@ -19,7 +19,7 @@
 		570AF95C27C9DBC8000AADEF /* Network Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AF95B27C9DBC8000AADEF /* Network Service.swift */; };
 		570AF95E27C9DBE3000AADEF /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AF95D27C9DBE3000AADEF /* Photos.swift */; };
 		570AF96027C9E341000AADEF /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AF95F27C9E341000AADEF /* PhotoTableViewCell.swift */; };
-		570AF96727C9F961000AADEF /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AF96627C9F961000AADEF /* ImageDownloader.swift */; };
+		574FA98927CA865700A829BC /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FA98827CA865700A829BC /* ImageDownloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +56,7 @@
 		570AF95B27C9DBC8000AADEF /* Network Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network Service.swift"; sourceTree = "<group>"; };
 		570AF95D27C9DBE3000AADEF /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		570AF95F27C9E341000AADEF /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
-		570AF96627C9F961000AADEF /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		574FA98827CA865700A829BC /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				570AF95F27C9E341000AADEF /* PhotoTableViewCell.swift */,
+				574FA98827CA865700A829BC /* ImageDownloader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -149,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				570AF95B27C9DBC8000AADEF /* Network Service.swift */,
-				570AF96627C9F961000AADEF /* ImageDownloader.swift */,
 				570AF95D27C9DBE3000AADEF /* Photos.swift */,
 			);
 			path = Model;
@@ -296,7 +296,7 @@
 			files = (
 				570AF93027C9DB21000AADEF /* PhotoViewController.swift in Sources */,
 				570AF92C27C9DB21000AADEF /* AppDelegate.swift in Sources */,
-				570AF96727C9F961000AADEF /* ImageDownloader.swift in Sources */,
+				574FA98927CA865700A829BC /* ImageDownloader.swift in Sources */,
 				570AF96027C9E341000AADEF /* PhotoTableViewCell.swift in Sources */,
 				570AF92E27C9DB21000AADEF /* SceneDelegate.swift in Sources */,
 				570AF95E27C9DBE3000AADEF /* Photos.swift in Sources */,
