@@ -11,14 +11,23 @@ class PhotoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var descrpiptionLabel: UILabel!
+    private var task: URLSessionDataTask?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        task?.cancel()
+        task = nil
+        photoImageView.image = nil
     }
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
+
+    // Called in cellForRowAt / cellForItemAt
+    func configureWith(urlString: String) {
+        if task == nil {
+            // Ignore calls when reloading
+            task = photoImageView.downloadImage(from: urlString)
+            
+        }
     }
     
 }

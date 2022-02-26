@@ -6,33 +6,38 @@
 //
 
 import UIKit
-let imageCache = NSCache<NSString,AnyObject>()
+let imageCache = NSCache<NSString, UIImage>()
 
 extension UIImageView {
-    
-    func downloadImage(from urlString: String ) {
-        guard let url = URL(string: urlString) else { return }
-        storeCache(url: url)
-    }
-    
-    func storeCache(url:URL){
-        if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) as? UIImage {
-            self.image = cachedImage
-        }else {
-            let _: Void = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-                
-                guard let self = self else { return }
-                
 
-                if error != nil { return }
-                DispatchQueue.main.async {
-                    if let downloadedImage = UIImage(data: data!) {
-                        imageCache.setObject(downloadedImage, forKey: url.absoluteString as NSString)
-                        self.image = downloadedImage
-                    }
-                }
-            }.resume()
+    func downloadImage(from imgURL: String) -> URLSessionDataTask? {
+        guard let url = URL(string: imgURL) else { return nil }
+
+        // set initial image to nil so it doesn't use the image from a reused cell
+        image = nil
+
+        // check if the image is already in the cache
+        if let imageToCache = imageCache.object(forKey: imgURL as NSString) {
+            self.image = imageToCache
+            return nil
         }
+
+        // download the image asynchronously
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let err = error {
+                print(err)
+                return
+            }
+
+            DispatchQueue.main.async {
+                // create UIImage
+                let imageToCache = UIImage(data: data!)
+                // add image to cache
+                imageCache.setObject(imageToCache!, forKey: imgURL as NSString)
+                self.image = imageToCache
+            }
+        }
+        task.resume()
+        return task
     }
-    
 }

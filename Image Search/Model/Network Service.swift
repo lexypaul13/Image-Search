@@ -16,7 +16,7 @@ class NetworkService{
 
     
     func getJSON( searchName: String, completion: @escaping([PhotoModel]?) -> Void){
-        let endPoints = baseURL + "/search/time/week/?q=\(searchName)"
+        let endPoints = baseURL + "/search/time/all/?q=\(searchName)"
         guard let url = URL(string: endPoints ) else{return}
         var request =  URLRequest(url: url)
         let headers = ["Authorization": "Client-ID 82883e01a127f3c"]
@@ -39,7 +39,6 @@ class NetworkService{
                 DispatchQueue.main.async {
                     completion(decodedJson.data)
                 }
-                print(decodedJson.data)
 
             }catch let error{
                 print("Json failed to decode\(String(describing: error))")

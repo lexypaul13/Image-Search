@@ -31,6 +31,7 @@
 		574FA99627CA9BD000A829BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 570AF93427C9DB22000AADEF /* Assets.xcassets */; };
 		574FA99727CA9BD000A829BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 570AF93127C9DB21000AADEF /* Main.storyboard */; };
 		574FA99E27CAA65A00A829BC /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FA99D27CAA65A00A829BC /* PhotoDetailsViewController.swift */; };
+		574FA99F27CAC9B800A829BC /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FA99D27CAA65A00A829BC /* PhotoDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,7 +137,6 @@
 				570AF96127C9EA46000AADEF /* Views */,
 				570AF96227C9EA60000AADEF /* Model */,
 				570AF93127C9DB21000AADEF /* Main.storyboard */,
-				574FA99D27CAA65A00A829BC /* PhotoDetailsViewController.swift */,
 				570AF93427C9DB22000AADEF /* Assets.xcassets */,
 				570AF93627C9DB22000AADEF /* LaunchScreen.storyboard */,
 				570AF93927C9DB22000AADEF /* Info.plist */,
@@ -183,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				570AF92F27C9DB21000AADEF /* PhotoViewController.swift */,
+				574FA99D27CAA65A00A829BC /* PhotoDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -382,6 +383,7 @@
 				574FA98D27CA9BD000A829BC /* AppDelegate.swift in Sources */,
 				574FA98E27CA9BD000A829BC /* ImageDownloader.swift in Sources */,
 				574FA98F27CA9BD000A829BC /* PhotoTableViewCell.swift in Sources */,
+				574FA99F27CAC9B800A829BC /* PhotoDetailsViewController.swift in Sources */,
 				574FA99027CA9BD000A829BC /* SceneDelegate.swift in Sources */,
 				574FA99127CA9BD000A829BC /* Photos.swift in Sources */,
 				574FA99227CA9BD000A829BC /* Network Service.swift in Sources */,

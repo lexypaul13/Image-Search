@@ -8,10 +8,14 @@
 import UIKit
 
 class PhotoDetailsViewController: UIViewController {
-
+    var selectedPhotos : Image?
+    @IBOutlet weak var photoImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let _ = selectedPhotos{
+            photoImage.downloadImage(from: selectedPhotos?.link ?? "")
+        }
         // Do any additional setup after loading the view.
     }
     

@@ -29,11 +29,9 @@ struct PhotoModel:Codable {
 }
 
 struct Image: Codable {
-    let id: String
     let link: String?
     
     enum CodingKeys: String, CodingKey {
-        case id
         case link
     }
 }

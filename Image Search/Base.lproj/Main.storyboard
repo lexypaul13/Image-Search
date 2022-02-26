@@ -56,6 +56,7 @@
                                         <connections>
                                             <outlet property="descrpiptionLabel" destination="xig-l1-xyN" id="mB1-QW-DYT"/>
                                             <outlet property="photoImageView" destination="fLc-7m-aPr" id="dUV-xO-y8O"/>
+                                            <segue destination="bC7-9n-cD2" kind="showDetail" identifier="photoDetails" id="Qwj-7p-b1M"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -107,16 +108,16 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="115.84821428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Photo Details View Controller-->
         <scene sceneID="95O-Dh-gbA">
             <objects>
-                <viewController id="bC7-9n-cD2" sceneMemberID="viewController">
+                <viewController id="bC7-9n-cD2" customClass="PhotoDetailsViewController" customModule="Image_Search" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aMj-LZ-lSl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ne7-yg-r8g">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rF9-gL-yyf"/>
@@ -124,14 +125,18 @@
                         <constraints>
                             <constraint firstItem="rF9-gL-yyf" firstAttribute="trailing" secondItem="ne7-yg-r8g" secondAttribute="trailing" id="Mal-sZ-Toy"/>
                             <constraint firstItem="ne7-yg-r8g" firstAttribute="leading" secondItem="rF9-gL-yyf" secondAttribute="leading" id="Tuy-bk-pPR"/>
-                            <constraint firstItem="rF9-gL-yyf" firstAttribute="bottom" secondItem="ne7-yg-r8g" secondAttribute="bottom" id="eUq-Pi-UzK"/>
+                            <constraint firstItem="rF9-gL-yyf" firstAttribute="bottom" secondItem="ne7-yg-r8g" secondAttribute="bottom" constant="-34" id="eUq-Pi-UzK"/>
                             <constraint firstItem="ne7-yg-r8g" firstAttribute="top" secondItem="rF9-gL-yyf" secondAttribute="top" id="fmE-1v-buy"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="wDC-Uq-AEk"/>
+                    <connections>
+                        <outlet property="photoImage" destination="ne7-yg-r8g" id="2Sb-94-FJQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wRj-K0-pIw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="110"/>
+            <point key="canvasLocation" x="1017" y="116"/>
         </scene>
     </scenes>
     <resources>
