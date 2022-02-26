@@ -18,7 +18,6 @@ class PhotoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
-        searchPhoto(name: "dog")
     }
     
 
@@ -30,10 +29,7 @@ class PhotoViewController: UIViewController {
 
     func addButton(){
         guard let textfield =  textField.text else {return}
-         searchPhoto(name: textfield)
-}
-    func searchPhoto(name:String){
-        NetworkService.shared.getJSON(searchName: name) {  [weak self]  (photos) in
+        NetworkService.shared.getJSON(searchName: textfield) {  [weak self]  (photos) in
             guard let self = self else { return}
             guard let photos = photos else{ return }
             for photo in photos {
@@ -42,8 +38,8 @@ class PhotoViewController: UIViewController {
             }
             self.photos = photos
             self.tableView.reloadData()
-        }
-    }
+        }}
+  
         
     @IBAction func searchButton(_ sender: Any) {
         addButton()
