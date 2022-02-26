@@ -39,6 +39,7 @@ class NetworkService{
                 DispatchQueue.main.async {
                     completion(decodedJson.data)
                 }
+                print(decodedJson.data)
 
             }catch let error{
                 print("Json failed to decode\(String(describing: error))")
