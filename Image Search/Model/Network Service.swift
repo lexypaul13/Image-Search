@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 class NetworkService{
     static let shared = NetworkService()
     private let baseURL = "https://api.imgur.com/3/gallery"

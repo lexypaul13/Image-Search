@@ -9,35 +9,28 @@ import UIKit
 let imageCache = NSCache<NSString, UIImage>()
 
 extension UIImageView {
-
-    func downloadImage(from imgURL: String) -> URLSessionDataTask? {
-        guard let url = URL(string: imgURL) else { return nil }
-
-        // set initial image to nil so it doesn't use the image from a reused cell
-        image = nil
-
-        // check if the image is already in the cache
+    func downloadImage(_ imgURL: String, placeholder: UIImage? = nil)  {
+        guard let url = URL(string: imgURL) else { return  }
         if let imageToCache = imageCache.object(forKey: imgURL as NSString) {
-            self.image = imageToCache
-            return nil
+            image = imageToCache
+            return
         }
-
-        // download the image asynchronously
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let err = error {
-                print(err)
+        image = placeholder
+        
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data, error == nil,
+           let imageToCache = UIImage(data: data)
+            else {
+                print(error ?? URLError(.badServerResponse))
                 return
             }
-
+            
             DispatchQueue.main.async {
-                // create UIImage
-                let imageToCache = UIImage(data: data!)
-                // add image to cache
-                imageCache.setObject(imageToCache!, forKey: imgURL as NSString)
+                imageCache.setObject(imageToCache, forKey: imgURL as NSString)
                 self.image = imageToCache
             }
         }
         task.resume()
-        return task
+        
     }
 }
