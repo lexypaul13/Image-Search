@@ -133,9 +133,9 @@
 			children = (
 				570AF92B27C9DB21000AADEF /* AppDelegate.swift */,
 				570AF92D27C9DB21000AADEF /* SceneDelegate.swift */,
-				570AF96327C9EA83000AADEF /* Controller */,
-				570AF96127C9EA46000AADEF /* Views */,
 				570AF96227C9EA60000AADEF /* Model */,
+				570AF96127C9EA46000AADEF /* Views */,
+				570AF96327C9EA83000AADEF /* Controller */,
 				570AF93127C9DB21000AADEF /* Main.storyboard */,
 				570AF93427C9DB22000AADEF /* Assets.xcassets */,
 				570AF93627C9DB22000AADEF /* LaunchScreen.storyboard */,
@@ -165,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				570AF95F27C9E341000AADEF /* PhotoTableViewCell.swift */,
-				574FA98827CA865700A829BC /* ImageDownloader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,8 +172,9 @@
 		570AF96227C9EA60000AADEF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				570AF95B27C9DBC8000AADEF /* Network Service.swift */,
 				570AF95D27C9DBE3000AADEF /* Photos.swift */,
+				574FA98827CA865700A829BC /* ImageDownloader.swift */,
+				570AF95B27C9DBC8000AADEF /* Network Service.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

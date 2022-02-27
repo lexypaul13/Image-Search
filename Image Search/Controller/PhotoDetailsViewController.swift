@@ -12,9 +12,11 @@ class PhotoDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        downloadImage()
+    }
+    func downloadImage(){
         if let _ = selectedPhotos{
-            photoImage.downloadImage(selectedPhotos?.link ?? "", placeholder: UIImage(named: "No Image"))
+            photoImage.downloadImage(selectedPhotos?.link ?? "", placeholder: UIImage(named: "no image large"))
         }
     }
-
 }

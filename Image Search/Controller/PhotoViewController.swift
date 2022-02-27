@@ -11,16 +11,22 @@ class PhotoViewController: UIViewController {
     var photos = [PhotoModel]()
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textField: UITextField!
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+            backgroundImage.image = UIImage(named: "no image small")
+            backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+            self.view.bringSubviewToFront(backgroundImage)
     }
-    
-    
+
     func setUpTableView(){
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    func setupPlaceholderImage(){
+        
     }
     
     
@@ -38,6 +44,7 @@ class PhotoViewController: UIViewController {
         addButton()
     }
     
+    
 }
 
 
@@ -51,11 +58,13 @@ extension PhotoViewController: UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoTableViewCell", for: indexPath) as! PhotoTableViewCell
         let photoIndex = photos[indexPath.row]
         cell.descrpiptionLabel.text = photoIndex.title ?? ""
-        cell.viewsLabel.text = "Views: \(photoIndex.views)"
-        cell.photoImageView.downloadImage(photoIndex.images?.first?.link ?? "", placeholder: UIImage(named: "No Image")!)
+        cell.viewsLabel.text = "\(photoIndex.views) Views"
+        cell.photoImageView.downloadImage(photoIndex.images?.first?.link ?? "", placeholder: UIImage(named: "no image small")!)
         
         return cell
     }
+    
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "photoDetails" {
