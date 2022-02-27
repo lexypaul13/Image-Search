@@ -17,9 +17,10 @@ extension UIImageView {
         }
         image = placeholder
         
-        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+        let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+            guard let self = self else { return }
             guard let data = data, error == nil,
-           let imageToCache = UIImage(data: data)
+                  let imageToCache = UIImage(data: data)
             else {
                 print(error ?? URLError(.badServerResponse))
                 return

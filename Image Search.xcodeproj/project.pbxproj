@@ -19,6 +19,8 @@
 		570AF95C27C9DBC8000AADEF /* Network Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AF95B27C9DBC8000AADEF /* Network Service.swift */; };
 		570AF95E27C9DBE3000AADEF /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AF95D27C9DBE3000AADEF /* Photos.swift */; };
 		570AF96027C9E341000AADEF /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AF95F27C9E341000AADEF /* PhotoTableViewCell.swift */; };
+		57225A4427CB3F3700B767A9 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57225A4327CB3F3100B767A9 /* ActivityIndicator.swift */; };
+		57225A4527CB3F3700B767A9 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57225A4327CB3F3100B767A9 /* ActivityIndicator.swift */; };
 		574FA98927CA865700A829BC /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FA98827CA865700A829BC /* ImageDownloader.swift */; };
 		574FA98C27CA9BD000A829BC /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AF92F27C9DB21000AADEF /* PhotoViewController.swift */; };
 		574FA98D27CA9BD000A829BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AF92B27C9DB21000AADEF /* AppDelegate.swift */; };
@@ -68,6 +70,7 @@
 		570AF95B27C9DBC8000AADEF /* Network Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network Service.swift"; sourceTree = "<group>"; };
 		570AF95D27C9DBE3000AADEF /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		570AF95F27C9E341000AADEF /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		57225A4327CB3F3100B767A9 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		574FA98827CA865700A829BC /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		574FA99B27CA9BD000A829BC /* Image Search copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image Search copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		574FA99C27CA9BD000A829BC /* Image Search copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Image Search copy-Info.plist"; path = "/Users/alexpaul/Desktop/Image Search/Image Search copy-Info.plist"; sourceTree = "<absolute>"; };
@@ -133,6 +136,7 @@
 			children = (
 				570AF92B27C9DB21000AADEF /* AppDelegate.swift */,
 				570AF92D27C9DB21000AADEF /* SceneDelegate.swift */,
+				57225A4627CB4F0700B767A9 /* Extensions */,
 				570AF96227C9EA60000AADEF /* Model */,
 				570AF96127C9EA46000AADEF /* Views */,
 				570AF96327C9EA83000AADEF /* Controller */,
@@ -173,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				570AF95D27C9DBE3000AADEF /* Photos.swift */,
-				574FA98827CA865700A829BC /* ImageDownloader.swift */,
 				570AF95B27C9DBC8000AADEF /* Network Service.swift */,
 			);
 			path = Model;
@@ -186,6 +189,15 @@
 				574FA99D27CAA65A00A829BC /* PhotoDetailsViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		57225A4627CB4F0700B767A9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				57225A4327CB3F3100B767A9 /* ActivityIndicator.swift */,
+				574FA98827CA865700A829BC /* ImageDownloader.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +366,7 @@
 				574FA99E27CAA65A00A829BC /* PhotoDetailsViewController.swift in Sources */,
 				570AF92E27C9DB21000AADEF /* SceneDelegate.swift in Sources */,
 				570AF95E27C9DBE3000AADEF /* Photos.swift in Sources */,
+				57225A4527CB3F3700B767A9 /* ActivityIndicator.swift in Sources */,
 				570AF95C27C9DBC8000AADEF /* Network Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +399,7 @@
 				574FA99F27CAC9B800A829BC /* PhotoDetailsViewController.swift in Sources */,
 				574FA99027CA9BD000A829BC /* SceneDelegate.swift in Sources */,
 				574FA99127CA9BD000A829BC /* Photos.swift in Sources */,
+				57225A4427CB3F3700B767A9 /* ActivityIndicator.swift in Sources */,
 				574FA99227CA9BD000A829BC /* Network Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,7 +18,7 @@ class NetworkService{
         let endPoints = baseURL + "/search/time/all/?q=\(searchName)"
         guard let url = URL(string: endPoints ) else{return}
         var request =  URLRequest(url: url)
-        let headers = ["Authorization": "Client-ID 82883e01a127f3c"]
+        let headers = ["Authorization": "Client-ID "]
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
